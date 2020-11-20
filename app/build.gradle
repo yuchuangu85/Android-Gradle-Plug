@@ -38,10 +38,10 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation deps.core_ktx
-    implementation deps.app_compat
-    implementation deps.material
-    implementation deps.constraint_layout
+    implementation rootProject.ext.deps.core_ktx
+    implementation rootProject.ext.deps.app_compat
+    implementation rootProject.ext.deps.material
+    implementation rootProject.ext.deps.constraint_layout
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.navigation:navigation-fragment:2.3.1'
     implementation 'androidx.navigation:navigation-ui:2.3.1'
