@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+// 这里是customplugin插件项目中的src/main/resources/META_INF/gradle-plugins/mxplugin.properties的文件名字
+apply plugin: 'mxplugin'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion

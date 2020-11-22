@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    implementation gradleApi()
+    testImplementation 'junit:junit:4.13'
+}
+
+//以上都为固定写法
+//publish to local directory
+uploadArchives { //当前项目可以发布到本地文件夹中
+    repositories {
+        mavenDeployer {
+            // 下面三个变量组成项目依赖中buildscript中dependencies中的classpath路径
+            // 格式：classpath groupId:artifactId:version
+            pom.groupId = 'com.codemx.plugin'   //groupId
+            pom.artifactId = 'customplugin'     //artifactId
+            pom.version = '1.0.0'               //version
+            repository(url: uri('./repo')) //定义本地maven仓库的地址(也可以设置远程地址)
+        }
+    }
+}

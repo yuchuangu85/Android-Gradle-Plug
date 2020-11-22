@@ -1,19 +1,29 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+// 这里的配置都是给build.gradle使用的，外面全局的是给项目中的代码使用的
 buildscript {
     apply from: 'versions.gradle'
-//    addRepos(repositories)
 
     ext.kotlin_version = "1.4.10"
     repositories {
         google()
         jcenter()
+        // 添加依赖本地开发插件库
+        maven {
+            url '/Users/yuchuan/CodeMX/MX/AndroidX-Demo/customplugin/repo/'
+        }
     }
+
+    // buildscript配置的dependencies里的依赖包是给build.gradle文件使用的，
+    // 并且这里需要使用classpath替换implementation关键字
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        // 添加classpath: groupId:artifactId:version（参看customplugin中的build.gradle）
+        classpath "com.codemx.plugin:customplugin:1.0.0"
     }
 }
 
