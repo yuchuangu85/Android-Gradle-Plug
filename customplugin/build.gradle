@@ -1,6 +1,17 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        // The Gradle Bintray Plugin allows you to publish artifacts to Bintray.
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
+    }
+}
+
 repositories {
     mavenLocal()
     jcenter()
@@ -8,6 +19,7 @@ repositories {
 
 dependencies {
     implementation gradleApi()
+    compileOnly 'com.android.tools.build:gradle:4.0.2'
     testImplementation 'junit:junit:4.13'
 }
 
