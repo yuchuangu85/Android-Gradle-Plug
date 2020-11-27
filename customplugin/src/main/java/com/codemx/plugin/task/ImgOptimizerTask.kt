@@ -59,9 +59,9 @@ class ImgOptimizerTask : DefaultTask() {
             if (dir.isDirectory) {
                 dir.listFiles()?.forEach {
                     if (it.totalSpace >= (1024 * triggerSize) && !it.name.endsWith(".9.png") &&
-                        (file.name.endsWith(".png"))
+                        (it.name.endsWith(".png"))
                     ) {
-                        files.add(file)
+                        files.add(it)
                     }
                 }
             }

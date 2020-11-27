@@ -14,11 +14,11 @@ import java.io.File
 class CustomPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         if (project.plugins.hasPlugin(AppPlugin::class.java)) {
-            applyAndroid(project, project.android.applicationVariants as DomainObjectCollection<BaseVariant>)
+//            applyAndroid(project, project.android.applicationVariants as DomainObjectCollection<BaseVariant>)
         } else if (project.plugins.hasPlugin(LibraryPlugin::class.java)) {
-            applyAndroid(project, project.android.libraryVariants as DomainObjectCollection<BaseVariant>)
+//            applyAndroid(project, project.android.libraryVariants as DomainObjectCollection<BaseVariant>)
         } else {
-            throw IllegalArgumentException('img-optimizer gradle plugin only works in with Android module.')
+//            throw IllegalArgumentException('img-optimizer gradle plugin only works in with Android module.')
         }
     }
 
