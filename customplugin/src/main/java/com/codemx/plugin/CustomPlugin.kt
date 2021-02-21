@@ -11,8 +11,13 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import java.io.File
 
+/**
+ * 地址：
+ * https://sourcegraph.com/github.com/chenenyu/img-optimizer-gradle-plugin/-/tree/img-optimizer
+ */
 class CustomPlugin : Plugin<Project> {
     override fun apply(project: Project) {
+        print(project.toString())
         if (project.plugins.hasPlugin(AppPlugin::class.java)) {
 //            applyAndroid(project, project.android.applicationVariants as DomainObjectCollection<BaseVariant>)
         } else if (project.plugins.hasPlugin(LibraryPlugin::class.java)) {

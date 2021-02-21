@@ -1,4 +1,3 @@
 rootProject.name = "AndroidX-demo"
 include ':app'
 include ':customplugin'
-include ':jetpacklibrary'

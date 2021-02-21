@@ -20,7 +20,7 @@ repositories {
 dependencies {
     implementation gradleApi()
     compileOnly 'com.android.tools.build:gradle:4.0.2'
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 //以上都为固定写法
